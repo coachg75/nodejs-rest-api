@@ -3,7 +3,11 @@ const app = express();
 const cors = require("cors");
 const db = require("./database.js");
 
-app.use(cors());
+const corsOptions = {
+  origin: "*",
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const HTTP_PORT = 8000;
